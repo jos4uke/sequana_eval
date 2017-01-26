@@ -1,6 +1,11 @@
 ---
 title: "sequana on flocad R Notebook"
-output: html_notebook
+output: 
+  html_notebook:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
 ---
   
 # Sequana  
@@ -185,8 +190,113 @@ INFO:root:Initialising GUI
 INFO:root:Reading settings
 """
 
+# symlink kraken database
+ln -s ~/.config/sequana/kraken_toydb kraken_toydb
+
+```
+    
+#### Configure the pipeline:
+  
+![1. Choose the quality control pipeline](images/sequana_quality_control_kraken.png)  
+  
+![2. Choose the input directory (*.fastq.gz parent directory)](images/sequana_quality_control_kraken_input.png)    
+  
+![3. Create the output directory](images/sequana_quality_control_kraken_outdir.png)  
+  
+![4. Configue the adapter_removal parameters section](images/sequana_quality_control_kraken.png)   
+  
+![5. Select the kraken database path](images/sequana_quality_control_kraken_db.png)  
+  
+[6. Save]()
+```
+=> save to config.yaml  
+```
+
+[7. Unlock]()  
+  
+[8. Run]()  
+```
+=> generate quality_control.rules  
+=> download phiX174.fa reference genome into output directory  
+
+``` 
+
+![9. Select the phiX reference genome](images/sequana_quality_control_kraken_ref_phiX174.png)  
+  
+[10. Save]()
+```
+=> overwrite config.yaml 
+```
+
+[11. Unlock]()  
+   
+[12. Run]()   
+```
+TOFIX: 
+
+"""
+AttributeError in line 29 of /home/jtran1/Documents/IPS2/FLOCAD/bioinfo/sequana_flocad/test/quality_control_w_kraken_gui/quality_control.rules:
+\'collections.OrderedDict\' object has no attribute \'do\'
+File "/home/jtran1/Documents/IPS2/FLOCAD/bioinfo/sequana_flocad/test/quality_control_w_kraken_gui/quality_control.rules", line 29, in 
+"""
+
+```   
+  
+**DEBUG**  
+  
+```{bash, eval=FALSE} 
+# on the command line
+cd /home/jtran1/Documents/IPS2/FLOCAD/bioinfo/sequana_flocad/test/quality_control_w_kraken_gui
+snakemake -s quality_control.rules --stat stats.txt -p --cores 1 --configfile config.yaml
+
+"""
+AttributeError in line 29 of /home/jtran1/Documents/IPS2/FLOCAD/bioinfo/sequana_flocad/test/quality_control_w_kraken_gui/quality_control.rules:
+'collections.OrderedDict' object has no attribute 'do'
+  File "/home/jtran1/Documents/IPS2/FLOCAD/bioinfo/sequana_flocad/test/quality_control_w_kraken_gui/quality_control.rules", line 29, in <module>
+
+"""
+
+# is there a difference with previous rules? NO  
+diff -q quality_control.rules ../quality_control_w_kraken/quality_control.rules
+
+```
+   
+Bug confirmed.   
+  
+```{bash, eval=FALSE}
+# Failed
+snakemake -s quality_control.rules --stat stats.txt -p --cores 1 --configfile config.yaml
+
+# Worked
+snakemake -s quality_control.rules --stat stats.txt -p -j 4 --nolock
+
 ```
   
+  
+Test snakemake command lines using same gui input files:     
+    
+```{bash, eval=FALSE}
+# ouput directory
+mkdir $ROOTDIR/test/quality_control_w_kraken_3
+cd $ROOTDIR/test/quality_control_w_kraken_3
+rsync ../quality_control_w_kraken_2/quality_control.rules .
+rsync ../quality_control_w_kraken_2/config.yaml .
+rsync ../quality_control_w_kraken_2/phiX174.fa .
+
+# Failed
+snakemake -s quality_control.rules --stat stats.txt -p --cores 1 --configfile config.yaml
+snakemake -s quality_control.rules --stat stats.txt -p --cores 4 --configfile config.yaml
+
+# Worked
+snakemake -s quality_control.rules --stat stats.txt -p -j 4 --nolock
+snakemake -s quality_control.rules --stat stats.txt -p --cores 4
+
+```  
+  
+So the --configfile option passed in argument caused the error.  
+TODO: submit an issue  
+  
+    
 # RStudio Notebook shortcuts  
   
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
