@@ -414,9 +414,24 @@ less config.yaml
 # run the snakemamake helper bash script
 sh runme.sh &>runme.sh.log
 
+# files not found due to filesystem latency
+
+# increase snakemake --latency-wait
+vim runme.sh
+
+"""
+snakemake -s quality_control.rules --stats stats.txt -p -j 4 --nolock --latency-wait 10
+
+"""
+
+# resume
+sh runme.sh &>runme.sh.log
+
+TOFIX: dag and rulegraph rules are run using snakemake subrun, but the --latency-wait option is not passed from the main snakemake run.  
+
 ```
   
-multi_summary.html report is OK. Kraken/Krona reporting is OK.      
+<!-- multi_summary.html report is OK. Kraken/Krona reporting is OK.       -->
          
     
     
