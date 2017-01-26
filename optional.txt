@@ -1,0 +1,17 @@
+pysam
+pyvcf
+snpeff
+biokit
+bioservices
+spades
+khmer
+bwa
+bcftools
+samtools
+bedtools
+picard
+freebayes
+fastqc
+kraken
+krona
+pigz
