@@ -307,9 +307,9 @@ cd ../src/
 git clone git@laforge.ips2.u-psud.fr:FLOCAD/sequana_eval.git
 
 # add channels
-git config --get channels
-conda config --add channels r
-conda config --add channels bioconda
+conda config --get channels
+#conda config --add channels r
+#conda config --add channels bioconda
 
 # sequana package requirements
 head requirements.txt
@@ -467,7 +467,45 @@ TOFIX: install glibc 2.14 but conda does not provide this version
   
 <!-- multi_summary.html report is OK. Kraken/Krona reporting is OK.       -->
          
-    
+### reinstallation using conda and resume quality control    
+           
+```{bash, eval=FALSE}
+# remove miniconda3
+cd && rm -rf miniconda3
+
+# edit .bashrc: remove miniconda3 path
+
+# reinstall miniconda3
+
+# ROOTDIR
+cd $ROOTDIR
+
+# glibc
+conda config --add channels asmeurer
+echo "glibc=2.19" > glibc.txt
+
+# reinstall sequana env
+conda create -n sequana --file=requirements.txt --file=optional.txt --file=glibc.txt
+=> failed: "/home/IPS2/jtran1/cluster/miniconda3/envs/sequana/bin/.openssl-post-link.sh: line 7: 23938 Erreur de segmentation  (core dumped) $PREFIX/bin/.openssl-libcrypto-fix $PREFIX
+LinkError: Link error: Error: post-link failed for: openssl-1.0.2k-0"
+
+# remove sequana env
+conda env remove -n sequana
+# relink packages
+conda create -n sequana --file=requirements.txt --file=optional.txt
+
+# clean
+rm glibc.txt
+
+# reinstall sequana
+source activate sequana
+pip install sequana
+
+# cannot resume 
+# sh runme.sh &>runme.sh.log
+
+
+``` 
     
     
 # RStudio Notebook shortcuts  
