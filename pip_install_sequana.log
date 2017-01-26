@@ -1,0 +1,263 @@
+pip install sequana
+Collecting sequana
+  Downloading sequana-0.1.18.tar.gz (3.0MB)
+    100% |████████████████████████████████| 3.1MB 514kB/s 
+Collecting easydev>=0.9.31 (from sequana)
+  Downloading easydev-0.9.31.tar.gz (52kB)
+    100% |████████████████████████████████| 61kB 14.9MB/s 
+Collecting reports>=0.3.0 (from sequana)
+  Downloading reports-0.3.0.tar.gz (145kB)
+    100% |████████████████████████████████| 153kB 11.0MB/s 
+Requirement already satisfied: matplotlib in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from sequana)
+Requirement already satisfied: pyVCF in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from sequana)
+Requirement already satisfied: pandas in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from sequana)
+Collecting cutadapt>=1.9.1 (from sequana)
+  Downloading cutadapt-1.12.tar.gz (281kB)
+    100% |████████████████████████████████| 286kB 5.7MB/s 
+Collecting bioservices>=1.4.14 (from sequana)
+  Downloading bioservices-1.4.15.tar.gz (199kB)
+    100% |████████████████████████████████| 204kB 7.7MB/s 
+Collecting biokit>=0.3.4 (from sequana)
+  Downloading biokit-0.3.4.tar.gz (75kB)
+    100% |████████████████████████████████| 81kB 15.0MB/s 
+Requirement already satisfied: pysam in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from sequana)
+Requirement already satisfied: docutils in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from sequana)
+Collecting sphinx-gallery (from sequana)
+  Downloading sphinx-gallery-0.1.8.tar.gz (59kB)
+    100% |████████████████████████████████| 61kB 11.8MB/s 
+Collecting mock (from sequana)
+  Downloading mock-2.0.0-py2.py3-none-any.whl (56kB)
+    100% |████████████████████████████████| 61kB 14.3MB/s 
+Collecting numpydoc (from sequana)
+  Downloading numpydoc-0.6.0.tar.gz
+Collecting pillow (from sequana)
+  Downloading Pillow-4.0.0-cp35-cp35m-manylinux1_x86_64.whl (5.6MB)
+    100% |████████████████████████████████| 5.6MB 273kB/s 
+Collecting blist (from sequana)
+  Downloading blist-1.3.6.tar.gz (122kB)
+    100% |████████████████████████████████| 122kB 13.0MB/s 
+Collecting sphinx (from sequana)
+  Downloading Sphinx-1.5.2-py2.py3-none-any.whl (1.6MB)
+    100% |████████████████████████████████| 1.6MB 1.1MB/s 
+Collecting ruamel.yaml>=0.13.2 (from sequana)
+  Downloading ruamel.yaml-0.13.11-cp35-cp35m-manylinux1_x86_64.whl (535kB)
+    100% |████████████████████████████████| 542kB 3.3MB/s 
+Collecting colorlog (from sequana)
+  Downloading colorlog-2.10.0-py2.py3-none-any.whl
+Collecting entrypoints (from sequana)
+  Downloading entrypoints-0.2.2-py2.py3-none-any.whl
+Collecting pyquickhelper (from sequana)
+  Downloading pyquickhelper-1.5.1785-py3-none-any.whl (400kB)
+    100% |████████████████████████████████| 409kB 4.3MB/s 
+Requirement already satisfied: colorama in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from easydev>=0.9.31->sequana)
+Collecting pexpect (from easydev>=0.9.31->sequana)
+  Downloading pexpect-4.2.1-py2.py3-none-any.whl (55kB)
+    100% |████████████████████████████████| 61kB 15.3MB/s 
+Requirement already satisfied: colormap in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages/colormap-0.9.8-py3.5.egg (from reports>=0.3.0->sequana)
+Collecting jinja2 (from reports>=0.3.0->sequana)
+  Downloading Jinja2-2.9.4-py2.py3-none-any.whl (274kB)
+    100% |████████████████████████████████| 276kB 9.0MB/s 
+Requirement already satisfied: numpy>=1.7.1 in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from matplotlib->sequana)
+Requirement already satisfied: six>=1.10 in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from matplotlib->sequana)
+Requirement already satisfied: python-dateutil in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages/python_dateutil-2.3-py3.5.egg (from matplotlib->sequana)
+Requirement already satisfied: pytz in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from matplotlib->sequana)
+Requirement already satisfied: cycler>=0.10 in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from matplotlib->sequana)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=1.5.6 in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from matplotlib->sequana)
+Requirement already satisfied: setuptools in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages/setuptools-27.2.0-py3.5.egg (from pyVCF->sequana)
+Collecting xopen>=0.1.0 (from cutadapt>=1.9.1->sequana)
+  Downloading xopen-0.1.1.tar.gz
+Requirement already satisfied: grequests in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from bioservices>=1.4.14->sequana)
+Requirement already satisfied: requests in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from bioservices>=1.4.14->sequana)
+Requirement already satisfied: requests_cache in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages/requests_cache-0.4.10-py3.5.egg (from bioservices>=1.4.14->sequana)
+Requirement already satisfied: beautifulsoup4 in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from bioservices>=1.4.14->sequana)
+Collecting xmltodict (from bioservices>=1.4.14->sequana)
+  Downloading xmltodict-0.10.2.tar.gz
+Requirement already satisfied: suds-jurko in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages/suds_jurko-0.6-py3.5.egg (from bioservices>=1.4.14->sequana)
+Requirement already satisfied: appdirs in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages/appdirs-1.4.0-py3.5.egg (from bioservices>=1.4.14->sequana)
+Requirement already satisfied: wrapt in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from bioservices>=1.4.14->sequana)
+Requirement already satisfied: scipy in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from biokit>=0.3.4->sequana)
+Collecting pbr>=0.11 (from mock->sequana)
+  Downloading pbr-1.10.0-py2.py3-none-any.whl (96kB)
+    100% |████████████████████████████████| 102kB 15.4MB/s 
+Collecting olefile (from pillow->sequana)
+  Downloading olefile-0.44.zip (74kB)
+    100% |████████████████████████████████| 81kB 15.7MB/s 
+Collecting babel!=2.0,>=1.3 (from sphinx->sequana)
+  Downloading Babel-2.3.4-py2.py3-none-any.whl (7.1MB)
+    100% |████████████████████████████████| 7.1MB 224kB/s 
+Collecting alabaster<0.8,>=0.7 (from sphinx->sequana)
+  Downloading alabaster-0.7.9-py2.py3-none-any.whl
+Collecting snowballstemmer>=1.1 (from sphinx->sequana)
+  Downloading snowballstemmer-1.2.1-py2.py3-none-any.whl (64kB)
+    100% |████████████████████████████████| 71kB 16.1MB/s 
+Collecting Pygments>=2.0 (from sphinx->sequana)
+  Downloading Pygments-2.2.0-py2.py3-none-any.whl (841kB)
+    100% |████████████████████████████████| 849kB 2.1MB/s 
+Collecting imagesize (from sphinx->sequana)
+  Downloading imagesize-0.7.1-py2.py3-none-any.whl
+Collecting notebook>=4.2.0 (from pyquickhelper->sequana)
+  Downloading notebook-4.3.1-py2.py3-none-any.whl (6.8MB)
+    100% |████████████████████████████████| 6.8MB 236kB/s 
+Collecting ipython-genutils (from pyquickhelper->sequana)
+  Downloading ipython_genutils-0.1.0-py2.py3-none-any.whl
+Collecting ipywidgets (from pyquickhelper->sequana)
+  Downloading ipywidgets-5.2.2-py2.py3-none-any.whl (43kB)
+    100% |████████████████████████████████| 51kB 15.5MB/s 
+Collecting metakernel (from pyquickhelper->sequana)
+  Downloading metakernel-0.18.4-py2.py3-none-any.whl (98kB)
+    100% |████████████████████████████████| 102kB 15.3MB/s 
+Collecting sphinxjp.themes.revealjs (from pyquickhelper->sequana)
+  Downloading sphinxjp.themes.revealjs-0.3.0-py2.py3-none-any.whl (1.6MB)
+    100% |████████████████████████████████| 1.6MB 1.1MB/s 
+Collecting simplegeneric (from pyquickhelper->sequana)
+  Downloading simplegeneric-0.8.1.zip
+Collecting traitlets (from pyquickhelper->sequana)
+  Downloading traitlets-4.3.1-py2.py3-none-any.whl (74kB)
+    100% |████████████████████████████████| 81kB 16.1MB/s 
+Collecting IPython>=5.0.0 (from pyquickhelper->sequana)
+  Downloading ipython-5.1.0-py3-none-any.whl (747kB)
+    100% |████████████████████████████████| 747kB 2.3MB/s 
+Collecting ipykernel (from pyquickhelper->sequana)
+  Downloading ipykernel-4.5.2-py2.py3-none-any.whl (98kB)
+    100% |████████████████████████████████| 102kB 14.6MB/s 
+Collecting jupyter (from pyquickhelper->sequana)
+  Downloading jupyter-1.0.0-py2.py3-none-any.whl
+Collecting pickleshare (from pyquickhelper->sequana)
+  Downloading pickleshare-0.7.4-py2.py3-none-any.whl
+Collecting multi-key-dict (from pyquickhelper->sequana)
+  Downloading multi_key_dict-2.0.3.tar.gz
+Collecting nbconvert>=4.2.0 (from pyquickhelper->sequana)
+  Downloading nbconvert-5.1.1-py2.py3-none-any.whl (372kB)
+    100% |████████████████████████████████| 378kB 4.8MB/s 
+Collecting jupyter-core (from pyquickhelper->sequana)
+  Downloading jupyter_core-4.2.1-py2.py3-none-any.whl (125kB)
+    100% |████████████████████████████████| 133kB 12.5MB/s 
+Collecting autopep8 (from pyquickhelper->sequana)
+  Downloading autopep8-1.2.4-py2.py3-none-any.whl (41kB)
+    100% |████████████████████████████████| 51kB 16.9MB/s 
+Collecting pyflakes (from pyquickhelper->sequana)
+  Downloading pyflakes-1.5.0-py2.py3-none-any.whl (225kB)
+    100% |████████████████████████████████| 225kB 9.2MB/s 
+Collecting jupyter-console (from pyquickhelper->sequana)
+  Downloading jupyter_console-5.0.0-py2.py3-none-any.whl
+Collecting sphinxcontrib-jsdemo (from pyquickhelper->sequana)
+  Downloading sphinxcontrib-jsdemo-0.1.4.tar.gz
+Collecting nbformat (from pyquickhelper->sequana)
+  Downloading nbformat-4.2.0-py2.py3-none-any.whl (153kB)
+    100% |████████████████████████████████| 153kB 9.9MB/s 
+Collecting nbpresent (from pyquickhelper->sequana)
+  Downloading nbpresent-3.0.0-py2.py3-none-any.whl (312kB)
+    100% |████████████████████████████████| 317kB 5.5MB/s 
+Collecting pycodestyle>=2.0.0 (from pyquickhelper->sequana)
+  Downloading pycodestyle-2.2.0-py2.py3-none-any.whl (44kB)
+    100% |████████████████████████████████| 51kB 15.3MB/s 
+Collecting sphinxcontrib-imagesvg (from pyquickhelper->sequana)
+  Downloading sphinxcontrib_imagesvg-0.1-py2.py3-none-any.whl
+Collecting jupyter-client (from pyquickhelper->sequana)
+  Downloading jupyter_client-4.4.0-py2.py3-none-any.whl (76kB)
+    100% |████████████████████████████████| 81kB 9.8MB/s 
+Collecting path.py (from pyquickhelper->sequana)
+  Downloading path.py-10.1-py2.py3-none-any.whl
+Collecting jyquickhelper (from pyquickhelper->sequana)
+  Downloading jyquickhelper-0.2.39-py3-none-any.whl (42kB)
+    100% |████████████████████████████████| 51kB 15.8MB/s 
+Collecting coverage (from pyquickhelper->sequana)
+  Downloading coverage-4.3.4-cp35-cp35m-manylinux1_x86_64.whl (191kB)
+    100% |████████████████████████████████| 194kB 8.6MB/s 
+Collecting ptyprocess>=0.5 (from pexpect->easydev>=0.9.31->sequana)
+  Downloading ptyprocess-0.5.1-py2.py3-none-any.whl
+Collecting MarkupSafe>=0.23 (from jinja2->reports>=0.3.0->sequana)
+  Downloading MarkupSafe-0.23.tar.gz
+Requirement already satisfied: gevent in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from grequests->bioservices>=1.4.14->sequana)
+Collecting terminado>=0.3.3; sys_platform != "win32" (from notebook>=4.2.0->pyquickhelper->sequana)
+  Downloading terminado-0.6.tar.gz
+Collecting tornado>=4 (from notebook>=4.2.0->pyquickhelper->sequana)
+  Downloading tornado-4.4.2.tar.gz (460kB)
+    100% |████████████████████████████████| 460kB 3.8MB/s 
+Collecting widgetsnbextension>=1.2.6 (from ipywidgets->pyquickhelper->sequana)
+  Downloading widgetsnbextension-1.2.6-py2.py3-none-any.whl (1.5MB)
+    100% |████████████████████████████████| 1.5MB 1.3MB/s 
+Collecting decorator (from traitlets->pyquickhelper->sequana)
+  Downloading decorator-4.0.11-py2.py3-none-any.whl
+Collecting prompt-toolkit<2.0.0,>=1.0.3 (from IPython>=5.0.0->pyquickhelper->sequana)
+  Downloading prompt_toolkit-1.0.9-py3-none-any.whl (241kB)
+    100% |████████████████████████████████| 245kB 7.1MB/s 
+Collecting qtconsole (from jupyter->pyquickhelper->sequana)
+  Downloading qtconsole-4.2.1-py2.py3-none-any.whl (104kB)
+    100% |████████████████████████████████| 112kB 14.9MB/s 
+Collecting bleach (from nbconvert>=4.2.0->pyquickhelper->sequana)
+  Downloading bleach-1.5.0-py2.py3-none-any.whl
+Collecting pandocfilters>=1.4.1 (from nbconvert>=4.2.0->pyquickhelper->sequana)
+  Downloading pandocfilters-1.4.1.tar.gz
+Collecting mistune!=0.6 (from nbconvert>=4.2.0->pyquickhelper->sequana)
+  Downloading mistune-0.7.3-py2.py3-none-any.whl
+Collecting testpath (from nbconvert>=4.2.0->pyquickhelper->sequana)
+  Downloading testpath-0.3-py2.py3-none-any.whl (82kB)
+    100% |████████████████████████████████| 92kB 15.5MB/s 
+Collecting pep8>=1.5.7 (from autopep8->pyquickhelper->sequana)
+  Downloading pep8-1.7.0-py2.py3-none-any.whl (41kB)
+    100% |████████████████████████████████| 51kB 15.3MB/s 
+Collecting jsonschema!=2.5.0,>=2.4 (from nbformat->pyquickhelper->sequana)
+  Downloading jsonschema-2.5.1-py2.py3-none-any.whl
+Collecting pyzmq>=13 (from jupyter-client->pyquickhelper->sequana)
+  Downloading pyzmq-16.0.2-cp35-cp35m-manylinux1_x86_64.whl (3.0MB)
+    100% |████████████████████████████████| 3.0MB 601kB/s 
+Requirement already satisfied: greenlet>=0.4.9 in /home/jtran1/miniconda3/envs/sequana/lib/python3.5/site-packages (from gevent->grequests->bioservices>=1.4.14->sequana)
+Collecting wcwidth (from prompt-toolkit<2.0.0,>=1.0.3->IPython>=5.0.0->pyquickhelper->sequana)
+  Downloading wcwidth-0.1.7-py2.py3-none-any.whl
+Collecting html5lib!=0.9999,!=0.99999,<0.99999999,>=0.999 (from bleach->nbconvert>=4.2.0->pyquickhelper->sequana)
+  Downloading html5lib-0.9999999.tar.gz (889kB)
+    100% |████████████████████████████████| 890kB 1.4MB/s 
+Building wheels for collected packages: sequana, easydev, reports, cutadapt, bioservices, biokit, sphinx-gallery, numpydoc, blist, xopen, xmltodict, olefile, simplegeneric, multi-key-dict, sphinxcontrib-jsdemo, MarkupSafe, terminado, tornado, pandocfilters, html5lib
+  Running setup.py bdist_wheel for sequana ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/f9/97/9b/bd6d851877998d4fd6800d925cb0887650a5c7bb8852a1e7be
+  Running setup.py bdist_wheel for easydev ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/1c/4e/4f/68fa8e22a20aa785590dcc6cafd3f0295eb5a4eeb4c3920118
+  Running setup.py bdist_wheel for reports ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/71/25/3b/4c0386ce14ffcbb2aad49e789daaf0895fac4722bf98ca3599
+  Running setup.py bdist_wheel for cutadapt ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/d2/b9/70/80d852c892ba5ac52a4905d405965e6f25a72244aedadb21cc
+  Running setup.py bdist_wheel for bioservices ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/4c/3d/1e/88e0527af543bcb2506f2d8b8af13b124a98ac417408db38d6
+  Running setup.py bdist_wheel for biokit ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/cf/2f/02/ac48b877ac7030cd625b4ec5806364e6c86fb0b13cd68bf3f1
+  Running setup.py bdist_wheel for sphinx-gallery ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/96/cb/d6/626ffbef493e3c232d5416ef70327875f7a262b25868988059
+  Running setup.py bdist_wheel for numpydoc ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/9d/ca/8c/9be286b195791bbbfebfd407899de13eb12725a2c2c9fdb36f
+  Running setup.py bdist_wheel for blist ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/f7/44/71/5364f587fda12a46ab7d92594d5a547b271a91b706b3584e88
+  Running setup.py bdist_wheel for xopen ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/ff/e8/0b/dfd4ce68da490da13582967f1a25fb7bb2e665aa74f192e46d
+  Running setup.py bdist_wheel for xmltodict ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/2a/dc/70/da8958d7089d994c8614bc38210f64855f09615e85707bf615
+  Running setup.py bdist_wheel for olefile ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/20/58/49/cc7bd00345397059149a10b0259ef38b867935ea2ecff99a9b
+  Running setup.py bdist_wheel for simplegeneric ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/7b/31/08/c85e74c84188cbec6a6827beec4d640f2bd78ae003dc1ec09d
+  Running setup.py bdist_wheel for multi-key-dict ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/7a/58/46/ded159f81ab3f2fce93eca7eea0b6d7db12375690acd8040f2
+  Running setup.py bdist_wheel for sphinxcontrib-jsdemo ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/4b/95/be/b7836f2630b5a67f4f8859d111d2db5a4135604f1dded8323f
+  Running setup.py bdist_wheel for MarkupSafe ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/a3/fa/dc/0198eed9ad95489b8a4f45d14dd5d2aee3f8984e46862c5748
+  Running setup.py bdist_wheel for terminado ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/3b/c2/ea/af635ffb63857a8c2ddd22da6a4b52f5b7ea3065db94ef5d7c
+  Running setup.py bdist_wheel for tornado ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/b3/db/47/46e05d1ee3ecfba252fcab42f0a156dab0df0cddf99fa0827c
+  Running setup.py bdist_wheel for pandocfilters ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/d4/01/68/49055c80b9f01ccb49241e73c8019628605064730941d70b56
+  Running setup.py bdist_wheel for html5lib ... done
+  Stored in directory: /home/jtran1/.cache/pip/wheels/6f/85/6c/56b8e1292c6214c4eb73b9dda50f53e8e977bf65989373c962
+Successfully built sequana easydev reports cutadapt bioservices biokit sphinx-gallery numpydoc blist xopen xmltodict olefile simplegeneric multi-key-dict sphinxcontrib-jsdemo MarkupSafe terminado tornado pandocfilters html5lib
+Installing collected packages: ptyprocess, pexpect, easydev, MarkupSafe, jinja2, reports, xopen, cutadapt, sphinx-gallery, xmltodict, numpydoc, bioservices, biokit, pbr, mock, olefile, pillow, blist, babel, alabaster, snowballstemmer, Pygments, imagesize, sphinx, ruamel.yaml, colorlog, entrypoints, pyzmq, ipython-genutils, decorator, traitlets, jupyter-core, jupyter-client, tornado, terminado, simplegeneric, wcwidth, prompt-toolkit, pickleshare, IPython, ipykernel, jsonschema, nbformat, html5lib, bleach, pandocfilters, mistune, testpath, nbconvert, notebook, widgetsnbextension, ipywidgets, metakernel, sphinxjp.themes.revealjs, jupyter-console, qtconsole, jupyter, multi-key-dict, pep8, autopep8, pyflakes, sphinxcontrib-jsdemo, nbpresent, pycodestyle, sphinxcontrib-imagesvg, path.py, jyquickhelper, coverage, pyquickhelper, sequana
+  Found existing installation: easydev 0.9.14
+    Uninstalling easydev-0.9.14:
+      Successfully uninstalled easydev-0.9.14
+  Found existing installation: bioservices 1.4.10
+    Uninstalling bioservices-1.4.10:
+      Successfully uninstalled bioservices-1.4.10
+  Found existing installation: biokit 0.2.1
+    Uninstalling biokit-0.2.1:
+      Successfully uninstalled biokit-0.2.1
+Successfully installed IPython-5.1.0 MarkupSafe-0.23 Pygments-2.2.0 alabaster-0.7.9 autopep8-1.2.4 babel-2.3.4 biokit-0.3.4 bioservices-1.4.15 bleach-1.5.0 blist-1.3.6 colorlog-2.10.0 coverage-4.3.4 cutadapt-1.12 decorator-4.0.11 easydev-0.9.31 entrypoints-0.2.2 html5lib-0.9999999 imagesize-0.7.1 ipykernel-4.5.2 ipython-genutils-0.1.0 ipywidgets-5.2.2 jinja2-2.9.4 jsonschema-2.5.1 jupyter-1.0.0 jupyter-client-4.4.0 jupyter-console-5.0.0 jupyter-core-4.2.1 jyquickhelper-0.2.39 metakernel-0.18.4 mistune-0.7.3 mock-2.0.0 multi-key-dict-2.0.3 nbconvert-5.1.1 nbformat-4.2.0 nbpresent-3.0.0 notebook-4.3.1 numpydoc-0.6.0 olefile-0.44 pandocfilters-1.4.1 path.py-10.1 pbr-1.10.0 pep8-1.7.0 pexpect-4.2.1 pickleshare-0.7.4 pillow-4.0.0 prompt-toolkit-1.0.9 ptyprocess-0.5.1 pycodestyle-2.2.0 pyflakes-1.5.0 pyquickhelper-1.5.1785 pyzmq-16.0.2 qtconsole-4.2.1 reports-0.3.0 ruamel.yaml-0.13.11 sequana-0.1.18 simplegeneric-0.8.1 snowballstemmer-1.2.1 sphinx-1.5.2 sphinx-gallery-0.1.8 sphinxcontrib-imagesvg-0.1 sphinxcontrib-jsdemo-0.1.4 sphinxjp.themes.revealjs-0.3.0 terminado-0.6 testpath-0.3 tornado-4.4.2 traitlets-4.3.1 wcwidth-0.1.7 widgetsnbextension-1.2.6 xmltodict-0.10.2 xopen-0.1.1
