@@ -37,7 +37,155 @@ source activate sequana
 pip install sequana
 
 ```
+  
+### test quality control pipeline  
+  
+Overview:	Quality control, trimming (adapter removal) and taxonomic overview  
+Input:	A set of FastQ (paired of single-end)  
+Output:	fastqc, cleanup FastQ files    
+   
+#### default quality control pipeline      
+  
+```{bash, eval=FALSE}
+ROOTDIR=$PWD
 
+mkdir -p $ROOTDIR/test/quality_control
+mkdir -p $ROOTDIR/test/input
+
+# download input files
+## 1500 reads
+cd test/input
+wget http://sequana.readthedocs.io/en/master/_downloads/Hm2_GTGAAA_L005_R1_001.fastq.gz
+wget http://sequana.readthedocs.io/en/master/_downloads/Hm2_GTGAAA_L005_R2_001.fastq.gz
+
+# initialise the pipeline quality control
+cd $ROOTDIR/
+## does not work: sequana --pipeline quality_control --output-directory test/quality_control --adapters PCRFree
+sequana --pipeline quality_control --input-directory test/input --working-directory test/quality_control --adapters PCRFree
+### for non-interactive mode: use --force 
+
+"""
+Welcome to Sequana standalone application
+Looking for sample files matching /home/jtran1/Documents/IPS2/FLOCAD/bioinfo/sequana_flocad/test/input/*fastq.gz
+Found 1 projects/samples 
+Will override the following files if present: quality_control.rules config.yaml, runme.sh, ...
+Do you want to proceed (to avoid this  message, use --force)? [y]/n:y
+Copying snakefile
+Creating README
+Creating the config file
+copied config.yaml from sequana quality_control pipeline
+Initialisation of test/quality_control succeeded
+Please, go to the project directory 
+
+   cd test/quality_control
+
+Check out the README and config.yaml files
+A basic script to run the analysis is named runme.sh 
+
+    sh runme.sh
+
+On a slurm cluster, you may type:
+
+  srun --qos normal runme.sh
+
+In case of trouble, please post an issue on https://github.com/sequana/sequana/issue 
+or type sequana --issue and fill a post with the error and the config file (NO DATA PLEASE)
+
+"""
+
+# review config.yaml
+cd $ROOTDIR/test/quality_control
+less config.yaml
+
+# run the snakemamake helper bash script
+sh runme.sh &>runme.sh.log
+
+
+```
+
+multi_summary.html report is OK. But kraken section report is missing.  
+  
+#### add kraken to default quality control pipeline      
+  
+```{bash, eval=FALSE}
+# run the quality control using the kraken toy database
+
+## download toy kraken database
+### open python shell
+python 
+
+"""
+Python 3.5.2 |Continuum Analytics, Inc.| (default, Jul  2 2016, 17:53:06) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from sequana import KrakenDownload, sequana_config_path
+>>> kd = KrakenDownload()
+>>> kd.download("toydb")
+>>> print(sequana_config_path)
+/home/jtran1/.config/sequana
+>>> database_path = sequana_config_path + "/kraken_toydb"
+>>> print(database_path)
+/home/jtran1/.config/sequana/kraken_toydb
+>>> 
+"""
+
+# initialise the quality control pipeline with kraken option
+cd $ROOTDIR/
+sequana --pipeline quality_control --input-directory test/input --working-directory test/quality_control_w_kraken --adapters PCRFree --kraken /home/jtran1/.config/sequana/kraken_toydb
+
+"""
+Welcome to Sequana standalone application
+Looking for sample files matching /home/jtran1/Documents/IPS2/FLOCAD/bioinfo/sequana_flocad/test/input/*fastq.gz
+Found 1 projects/samples 
+Copying snakefile
+Creating README
+Creating the config file
+copied config.yaml from sequana quality_control pipeline
+Initialisation of test/quality_control_w_kraken succeeded
+Please, go to the project directory 
+
+   cd test/quality_control_w_kraken
+
+Check out the README and config.yaml files
+A basic script to run the analysis is named runme.sh 
+
+    sh runme.sh
+
+On a slurm cluster, you may type:
+
+  srun --qos normal runme.sh
+
+In case of trouble, please post an issue on https://github.com/sequana/sequana/issue 
+or type sequana --issue and fill a post with the error and the config file (NO DATA PLEASE)
+
+"""
+
+# review config.yaml
+cd $ROOTDIR/test/quality_control_w_kraken
+less config.yaml
+
+# run the snakemamake helper bash script
+sh runme.sh &>runme.sh.log
+
+```
+  
+multi_summary.html report is OK. Kraken/Krona reporting is OK.      
+  
+### test sequana gui  
+  
+```{bash, eval=FALSE}
+sequana_gui 
+
+"""
+Creating directory /home/jtran1/.config/sequana 
+Creating directory /home/jtran1/.config/biokit 
+Creating directory /home/jtran1/.config/bioservices 
+INFO:root:Welcome to Sequana GUI (aka Sequanix)
+INFO:root:Initialising GUI
+INFO:root:Reading settings
+"""
+
+```
   
 # RStudio Notebook shortcuts  
   
