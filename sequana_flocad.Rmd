@@ -414,9 +414,9 @@ less config.yaml
 # run the snakemamake helper bash script
 sh runme.sh &>runme.sh.log
 
-# files not found due to filesystem latency
+# error glibc 2.14/2.15 not found maybe due to filesystem latency
 
-# increase snakemake --latency-wait
+# increase snakemake --latency-wait (default to 5 SECONDS => 10 SECONDS)
 vim runme.sh
 
 """
@@ -427,7 +427,41 @@ snakemake -s quality_control.rules --stats stats.txt -p -j 4 --nolock --latency-
 # resume
 sh runme.sh &>runme.sh.log
 
+# error
 TOFIX: dag and rulegraph rules are run using snakemake subrun, but the --latency-wait option is not passed from the main snakemake run.  
+
+FIX: edit snakemake commands in dag.rules and rulegraph.rules
+dag.rules: ~/miniconda3/envs/sequana/lib/python3.5/site-packages/sequana/rules/Misc/dag/dag.rules
+ 
+"""
+    run:
+        # Create the dot file (graphviz) using snakemake
+        shell("snakemake -s {input.filename} --dag --nolock --latency-wait 10 > {output.dot}")
+        
+"""
+
+rulegraph.rules: ~/miniconda3/envs/sequana/lib/python3.5/site-packages/sequana/rules/Misc/rulegraph/rulegraph.rules
+
+"""
+    run:
+        # Create the dot file (graphviz) using snakemake
+        shell("snakemake -s {input.filename} --rulegraph --latency-wait 10 > {output.dot}")
+
+"""
+
+# resume
+sh runme.sh &>runme.sh.log
+
+
+# still the same error glibc files not found, maybe not a latency issue but missing glibc
+TOFIX: install glibc 2.14 but conda does not provide this version
+# conda install -c asmeurer glibc=2.19 => seg fault core dumped error cannot run snakemake
+# conda install -c dan_blanchard glibc=2.18 => seg fault
+# conda install -c acellera-basic compat-libc=2.14.0 => glibc dependency not resolved, still the same error
+# conda install -c nlesc glibc=2.12.2 => glibc dependency not resolved, still the same error
+
+# cannot resume
+# sh runme.sh &>runme.sh.log
 
 ```
   
